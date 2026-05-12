@@ -4,7 +4,6 @@
   "public": true,
   "buildCommand": "",
   "outputDirectory": ".",
-  "framework": "static",
   "env": {},
   "git": {
     "deploymentEnabled": {
