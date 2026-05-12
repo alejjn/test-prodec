@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fala Kids — Debug</title>
+</head>
+<body style="font-family: monospace; padding: 40px; background: #1c0f3f; color: #fff;">
+  <h1>🔍 Debug - Fala Kids</h1>
+
+  <p>Verifique abaixo se todas as dependências estão carregadas:</p>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin></script>
+
+  <script>
+    const checks = [
+      { name: 'React', value: typeof React },
+      { name: 'ReactDOM', value: typeof ReactDOM },
+      { name: 'Babel', value: typeof Babel },
+    ];
+
+    checks.forEach(c => {
+      const status = c.value !== 'undefined' ? '✅' : '❌';
+      const line = `<p>${status} ${c.name}: <strong>${c.value}</strong></p>`;
+      document.body.insertAdjacentHTML('beforeend', line);
+    });
+
+    // Test JSX compilation
+    try {
+      Babel.transform('const x = <div>test</div>', { presets: ['react'] });
+      document.body.insertAdjacentHTML('beforeend', '<p>✅ JSX compilation: OK</p>');
+    } catch (e) {
+      document.body.insertAdjacentHTML('beforeend', `<p>❌ JSX compilation: ${e.message}</p>`);
+    }
+  </script>
+
+  <hr style="border-color: #5b3bff; margin: 40px 0;">
+
+  <h2>Testando carregamento de scripts...</h2>
+  <div id="test-root"></div>
+
+  <script type="text/babel">
+    try {
+      console.log('App.js loaded');
+      ReactDOM.createRoot(document.getElementById('test-root')).render(
+        <div style={{ background: '#5b3bff', padding: '20px', borderRadius: '8px', marginTop: '20px' }}>
+          <h3 style={{ color: '#ffb6d9' }}>✅ React está funcionando!</h3>
+          <p>Se você vê esta mensagem, o React e Babel estão funcionando corretamente.</p>
+        </div>
+      );
+    } catch (e) {
+      console.error('Erro ao renderizar:', e);
+      document.body.insertAdjacentHTML('beforeend', `<p>❌ Erro: ${e.message}</p>`);
+    }
+  </script>
+</body>
+</html>
