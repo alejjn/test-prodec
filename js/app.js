@@ -2471,13 +2471,20 @@ function PainValidation() {
 function Page() {
   React.useEffect(() => {
     // Meta Pixel Code
+    // Initialize fbq queue before loading script
     window.fbq = window.fbq || function() { (window.fbq.q = window.fbq.q || []).push(arguments) };
-    window.fbq('init', '1344729974214857');
-    window.fbq('track', 'PageView');
 
+    // Load fbevents.js script first
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+
+    // Call fbq methods after script loads
+    script.onload = () => {
+      window.fbq('init', '1344729974214857');
+      window.fbq('track', 'PageView');
+    };
+
     document.body.appendChild(script);
   }, []);
 
