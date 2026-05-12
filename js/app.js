@@ -1987,6 +1987,7 @@ function ProductCard() {
 
             {/* Promotion Tag */}
             <div
+              className="product-pricing-box"
               style={{
                 background: "linear-gradient(135deg, rgba(255, 68, 68, 0.1), rgba(255, 107, 107, 0.1))",
                 border: "2px solid #FF4444",
@@ -2010,7 +2011,7 @@ function ProductCard() {
 
             {/* CTA Button */}
             <button
-              className="pulse-button"
+              className="pulse-button product-cta-button"
               style={{
                 width: "100%",
                 background: "#5b3bff",
@@ -2020,7 +2021,7 @@ function ProductCard() {
                 padding: "20px 32px",
                 fontFamily: "'Nunito', sans-serif",
                 fontWeight: 900,
-                fontSize: 18,
+                fontSize: "clamp(14px, 2.5vw, 18px)",
                 cursor: "pointer",
                 textTransform: "uppercase",
                 letterSpacing: "0.1em",
