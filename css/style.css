@@ -1056,6 +1056,28 @@ h1.headline {
    ───────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
+  /* Fix carousel flex layout on mobile */
+  div[style*="maxWidth: clamp(320px"][style*="display: flex"] {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Hide navigation arrows on mobile, show image only */
+  button[style*="width: clamp(40px, 10vw, 50px)"] {
+    display: none !important;
+  }
+
+  /* Make image container full width on mobile */
+  div[style*="minHeight: clamp(350px"][style*="maxWidth: clamp(280px"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-height: 300px !important;
+  }
+
+  img[style*="maxHeight: clamp(350px"] {
+    min-height: 250px !important;
+  }
+
   /* Reduce star rating size */
   span[style*="fontSize: 24"][style*="color"] {
     font-size: 18px !important;
@@ -1086,6 +1108,15 @@ h1.headline {
 
   div[style*="fontSize: 14"][style*="color: #7e6cc9"] {
     font-size: 11px !important;
+  }
+
+  /* Ensure image displays on small phones */
+  div[style*="minHeight: clamp(350px"] {
+    min-height: 250px !important;
+  }
+
+  img[style*="maxHeight: clamp(350px"] {
+    min-height: 200px !important;
   }
 }
 
