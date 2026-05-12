@@ -1127,12 +1127,12 @@ function Skills() {
 
   return (
     <section className="skills">
-      <div style={{
+      <div className="skills-inner" style={{
         maxWidth: 1440,
         margin: "0 auto",
         padding: "0 clamp(24px, 6vw, 96px)"
       }}>
-        <div style={{
+        <div className="skills-grid" style={{
           display: "grid",
           gridTemplateColumns: "1fr 1.05fr",
           gap: 60,
@@ -2090,15 +2090,22 @@ function ProductCard() {
 
             {/* Deck-style product cards — Larger with bonus images */}
             <div
+              className="bonus-deck"
               style={{
                 marginTop: 40,
                 position: "relative",
                 height: 420,
+                width: "100%",
+                maxWidth: 590,
+                marginLeft: "auto",
+                marginRight: "auto",
+                overflow: "hidden",
               }}
             >
               <img
                 src="assets/images/bonus_1.png"
                 alt="Monte a Palavra"
+                className="bonus-card bonus-card--1"
                 style={{
                   width: 220,
                   height: 320,
@@ -2116,6 +2123,7 @@ function ProductCard() {
               <img
                 src="assets/images/bonus_2.png"
                 alt="Jogo Fichas"
+                className="bonus-card bonus-card--2"
                 style={{
                   width: 260,
                   height: 380,
@@ -2133,6 +2141,7 @@ function ProductCard() {
               <img
                 src="assets/images/bonus_3.png"
                 alt="Colorir e Textura"
+                className="bonus-card bonus-card--3"
                 style={{
                   width: 220,
                   height: 320,

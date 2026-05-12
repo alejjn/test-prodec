@@ -11,9 +11,11 @@
 }
 
 html {
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  overflow-x: hidden; /* fallback */
+  overflow-x: clip;
   overflow-y: auto;
   margin: 0;
   padding: 0;
@@ -25,9 +27,10 @@ body {
   font-family: "Nunito", system-ui, sans-serif;
   background: #ffffff;
   color: #1c0f3f;
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* fallback */
+  overflow-x: clip;
   overflow-y: auto;
   -webkit-font-smoothing: antialiased;
   position: relative;
@@ -81,30 +84,30 @@ section:is(.hero) {
   html,
   body,
   #root {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 100vw !important;
-    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: clip !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .hero {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding: 60px 20px !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     background: var(--bg, #5b3bff) !important;
     color: #fff !important;
   }
 
   section {
-    width: 100vw !important;
-    max-width: 100vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     padding-left: 20px !important;
     padding-right: 20px !important;
     margin: 0 !important;
-    overflow-x: hidden !important;
+    overflow-x: clip !important;
     background: #ffffff !important;
     color: #1c0f3f !important;
   }
@@ -779,5 +782,85 @@ h1.headline {
 
   .cta {
     margin: 0 auto;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   PRODUCT CARD — BONUS DECK (3 bonus images)
+   The pixel-offset absolute layout overflows mobile.
+   Re-layout to percent-based positions and shrink images.
+   ───────────────────────────────────────────────────── */
+
+.bonus-deck {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .bonus-deck {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: clamp(280px, 55vw, 420px) !important;
+    overflow: hidden !important;
+  }
+
+  .bonus-card {
+    width: clamp(120px, 26vw, 220px) !important;
+    height: auto !important;
+    aspect-ratio: 220 / 320;
+  }
+
+  .bonus-card--2 {
+    width: clamp(140px, 30vw, 260px) !important;
+    aspect-ratio: 260 / 380;
+  }
+
+  .bonus-card--1 {
+    left: 2% !important;
+    top: 12% !important;
+    transform: rotate(-12deg) !important;
+  }
+
+  .bonus-card--2 {
+    left: 50% !important;
+    top: 0 !important;
+    transform: translateX(-50%) rotate(0deg) !important;
+  }
+
+  .bonus-card--3 {
+    left: auto !important;
+    right: 2% !important;
+    top: 12% !important;
+    transform: rotate(12deg) !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   SKILLS — inline grid must collapse on mobile
+   ───────────────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   FINAL MOBILE SAFETY NET
+   Anything that still tries to overflow horizontally
+   gets clipped at the section level.
+   ───────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  section,
+  section > div,
+  section > div > div {
+    max-width: 100% !important;
+  }
+
+  /* Any element that explicitly uses fixed pixel widths bigger than
+     the viewport — fall back to fluid widths. */
+  img {
+    max-width: 100%;
   }
 }
