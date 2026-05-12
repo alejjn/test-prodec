@@ -44,6 +44,13 @@ body {
 
 section {
   width: 100%;
+  background: #ffffff;
+  color: #1c0f3f;
+}
+
+section:is(.hero) {
+  background: var(--bg, #5b3bff);
+  color: #fff;
 }
 
 /* MOBILE FIX - REMOVE ALL ABSOLUTE POSITIONING */
