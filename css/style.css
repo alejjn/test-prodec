@@ -843,6 +843,10 @@ h1.headline {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
+
+  .callout {
+    display: none !important;
+  }
 }
 
 /* ─────────────────────────────────────────────────────
