@@ -1001,6 +1001,95 @@ h1.headline {
 }
 
 /* ─────────────────────────────────────────────────────
+   HOW TO APPLY SECTION — Steps responsive
+   ───────────────────────────────────────────────────── */
+
+@media (max-width: 980px) {
+  /* Reduce step number circles on tablet/mobile */
+  div[style*="width: 120"][style*="height: 120"] {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* Scale down number font */
+  span[style*="fontSize: 56"] {
+    font-size: 36px !important;
+  }
+
+  /* Reduce step title font */
+  h3[style*="fontSize: 22"] {
+    font-size: 18px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Reduce step description font */
+  p[style*="fontSize: 15"][style*="color: #666"] {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Extra small circles on phones */
+  div[style*="width: 120"][style*="height: 120"] {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 12px !important;
+  }
+
+  span[style*="fontSize: 56"] {
+    font-size: 28px !important;
+  }
+
+  h3[style*="fontSize: 22"] {
+    font-size: 16px !important;
+  }
+
+  p[style*="fontSize: 15"][style*="color: #666"] {
+    font-size: 12px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   TESTIMONIALS SECTION — Counter and text responsive
+   ───────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  /* Reduce star rating size */
+  span[style*="fontSize: 24"][style*="color"] {
+    font-size: 18px !important;
+    margin-right: 4px !important;
+  }
+
+  /* Reduce testimonial counter text */
+  div[style*="fontSize: 14"][style*="color: #7e6cc9"] {
+    font-size: 12px !important;
+  }
+
+  /* Reduce rating text */
+  p[style*="fontSize: 16"][style*="fontWeight: 700"] {
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Very small stars on phones */
+  span[style*="fontSize: 24"][style*="color"] {
+    font-size: 16px !important;
+    margin-right: 2px !important;
+  }
+
+  p[style*="fontSize: 16"][style*="fontWeight: 700"] {
+    font-size: 13px !important;
+  }
+
+  div[style*="fontSize: 14"][style*="color: #7e6cc9"] {
+    font-size: 11px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
    FINAL MOBILE SAFETY NET
    Anything that still tries to overflow horizontally
    gets clipped at the section level.
