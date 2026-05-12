@@ -11,9 +11,12 @@
 }
 
 html {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -22,10 +25,12 @@ body {
   font-family: "Nunito", system-ui, sans-serif;
   background: #5b3bff;
   color: #fff;
-  min-height: 100vh;
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: auto;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 #root {
@@ -46,29 +51,43 @@ section {
   html,
   body,
   #root {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 100% !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    min-width: 100vw !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 60px 20px !important;
     overflow-x: hidden !important;
   }
 
-  .hero,
-  section,
-  section > div {
-    width: 100% !important;
-    max-width: none !important;
+  section {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin: 0 !important;
     overflow-x: hidden !important;
   }
 
+  section > div,
   .hero-inner,
   .skills-inner {
     width: 100% !important;
-    max-width: none !important;
+    max-width: 100% !important;
     grid-template-columns: 1fr !important;
+    margin: 0 !important;
   }
 
-  [style*="maxWidth"] {
+  [style*="maxWidth"],
+  [style*="width"] {
     max-width: 100% !important;
+    width: 100% !important;
   }
 }
 
