@@ -46,6 +46,13 @@ section {
   width: 100%;
 }
 
+/* MOBILE FIX - HIDE PRODUCT STACK IMAGES */
+@media (max-width: 980px) {
+  .stack-wrap {
+    display: none !important;
+  }
+}
+
 /* MOBILE FIX - AGGRESSIVE */
 @media (max-width: 1024px) {
   html,
