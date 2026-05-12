@@ -122,7 +122,6 @@ section:is(.hero) {
   .skills-inner {
     width: 100% !important;
     max-width: 100% !important;
-    grid-template-columns: 1fr !important;
     margin: 0 !important;
   }
 
@@ -847,14 +846,6 @@ h1.headline {
 
   .callout {
     display: none !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .skills-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
   }
 }
 
