@@ -1303,17 +1303,7 @@ function WhyItWorks() {
         </div>
 
         {/* Cards Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: 40,
-            "@media (max-width: 980px)": {
-              gridTemplateColumns: "1fr",
-              gap: 24,
-            },
-          }}
-        >
+        <div className="why-it-works-grid">
           {reasons.map((reason, i) => (
             <div
               key={i}
@@ -1427,33 +1417,9 @@ function HowToApply() {
         </div>
 
         {/* Steps Timeline */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 48,
-            "@media (max-width: 980px)": {
-              gridTemplateColumns: "1fr",
-              gap: 32,
-            },
-            position: "relative",
-          }}
-        >
+        <div className="how-to-apply-grid">
           {/* Connecting line (desktop only) */}
-          <div
-            style={{
-              position: "absolute",
-              top: "60px",
-              left: "5%",
-              right: "5%",
-              height: "3px",
-              background: "linear-gradient(90deg, #5b3bff 0%, #ffb6d9 50%, #ffd166 100%)",
-              display: "none",
-              "@media (min-width: 981px)": {
-                display: "block",
-              },
-            }}
-          />
+          <div className="how-to-apply-line" />
 
           {steps.map((step, i) => (
             <div key={i} style={{ position: "relative", zIndex: 1, textAlign: "center" }}>

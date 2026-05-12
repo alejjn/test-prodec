@@ -850,6 +850,58 @@ h1.headline {
 }
 
 /* ─────────────────────────────────────────────────────
+   WHY IT WORKS SECTION — Cards Grid
+   ───────────────────────────────────────────────────── */
+
+.why-it-works-grid {
+  display: grid;
+  gridTemplateColumns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 980px) {
+  .why-it-works-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
+   HOW TO APPLY SECTION — Steps Grid
+   ───────────────────────────────────────────────────── */
+
+.how-to-apply-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
+  position: relative;
+}
+
+@media (max-width: 980px) {
+  .how-to-apply-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+/* Connecting line (visible on desktop only) */
+.how-to-apply-line {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: linear-gradient(90deg, #5b3bff 0%, #ffb6d9 50%, #ffd166 100%);
+  display: none;
+}
+
+@media (min-width: 981px) {
+  .how-to-apply-line {
+    display: block;
+  }
+}
+
+/* ─────────────────────────────────────────────────────
    FINAL MOBILE SAFETY NET
    Anything that still tries to overflow horizontally
    gets clipped at the section level.
