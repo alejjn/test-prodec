@@ -704,18 +704,12 @@ function CoverLinguagem() {
 
 /* ────────── Hero Section ────────── */
 function Hero() {
-  const [t, setTweak] = useTweaks({
-    palette: ["#5b3bff", "#ffb6d9"],
-    decorations: "regular",
-    copyVariant: "default",
-  });
-
-  const palette = t.palette || PALETTES[0];
+  const palette = PALETTES[0];
   const bg = palette[0];
   const accent = palette[1];
-  const c = COPY[t.copyVariant] || COPY.default;
+  const c = COPY.default;
 
-  const density = t.decorations || "regular";
+  const density = "regular";
   const decoCount = { minimal: 0, regular: 1, lots: 2 }[density] ?? 1;
 
   return (
@@ -860,34 +854,6 @@ function Hero() {
         </div>
       </div>
 
-      <TweaksPanel>
-        <TweakSection label="Palette" />
-        <TweakColor
-          label="Background / accent"
-          value={palette}
-          options={PALETTES}
-          onChange={(v) => setTweak("palette", v)}
-        />
-        <TweakSection label="Content" />
-        <TweakRadio
-          label="Copy"
-          value={t.copyVariant}
-          options={["default", "short", "professional"]}
-          onChange={(v) => setTweak("copyVariant", v)}
-        />
-        <TweakSection label="Composition" />
-        <TweakRadio
-          label="Decorations"
-          value={t.decorations}
-          options={["minimal", "regular", "lots"]}
-          onChange={(v) => setTweak("decorations", v)}
-        />
-        <TweakToggle
-          label="Top nav"
-          value={t.showNav}
-          onChange={(v) => setTweak("showNav", v)}
-        />
-      </TweaksPanel>
     </div>
   );
 }
@@ -2526,50 +2492,6 @@ function PainValidation() {
   );
 }
 
-function WhatsappButton() {
-  return (
-    <a
-      href="https://wa.me/5513978089429?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Fala%20Kids"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        position: "fixed",
-        bottom: 100,
-        right: 30,
-        width: 60,
-        height: 60,
-        backgroundColor: "#25D366",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        cursor: "pointer",
-        zIndex: 999,
-        boxShadow: "0 8px 24px rgba(37, 211, 102, 0.4)",
-        transition: "all 0.3s ease",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "scale(1.1)";
-        e.currentTarget.style.boxShadow = "0 12px 32px rgba(37, 211, 102, 0.6)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "scale(1)";
-        e.currentTarget.style.boxShadow = "0 8px 24px rgba(37, 211, 102, 0.4)";
-      }}
-    >
-      <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="white"
-        strokeWidth="2"
-      >
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-      </svg>
-    </a>
-  );
-}
 
 function Page() {
   React.useEffect(() => {
@@ -2595,7 +2517,6 @@ function Page() {
       <ProductCard />
       <FAQ />
       <Footer />
-      <WhatsappButton />
     </>
   );
 }
