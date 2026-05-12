@@ -1134,8 +1134,8 @@ function Skills() {
       }}>
         <div className="skills-grid" style={{
           display: "grid",
-          gridTemplateColumns: "1fr 1.05fr",
-          gap: 60,
+          gridTemplateColumns: "0.9fr 1.2fr",
+          gap: 80,
           alignItems: "center",
           maxWidth: "100%"
         }}>
