@@ -1125,7 +1125,7 @@ h1.headline {
    ───────────────────────────────────────────────────── */
 
 .hero-products-image {
-  width: clamp(300px, 35vw, 500px) !important;
+  width: clamp(350px, 45vw, 600px) !important;
   height: auto !important;
   display: block;
 }
@@ -1139,7 +1139,7 @@ h1.headline {
     padding-right: 40px;
   }
   .hero-products-image {
-    width: clamp(350px, 40vw, 520px) !important;
+    width: clamp(380px, 45vw, 600px) !important;
   }
 }
 
@@ -1154,7 +1154,7 @@ h1.headline {
     height: auto !important;
   }
   .hero-products-image {
-    width: clamp(280px, 85vw, 400px) !important;
+    width: clamp(320px, 90vw, 450px) !important;
   }
 }
 
@@ -1164,7 +1164,33 @@ h1.headline {
     margin-top: 16px;
   }
   .hero-products-image {
-    width: clamp(240px, 80vw, 320px) !important;
+    width: clamp(280px, 90vw, 380px) !important;
+  }
+
+  /* Shrink logo on mobile */
+  .brand {
+    font-size: 16px !important;
+  }
+
+  .brand-dot {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 12px !important;
+  }
+
+  /* Reduce headline and script fonts on mobile */
+  .script {
+    font-size: clamp(48px, 7vw, 90px) !important;
+    margin-bottom: 16px !important;
+  }
+
+  h1.headline {
+    font-size: clamp(32px, 5vw, 56px) !important;
+    margin-bottom: 20px !important;
+  }
+
+  .lede {
+    font-size: 15px !important;
   }
 }
 
