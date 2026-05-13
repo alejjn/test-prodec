@@ -58,10 +58,6 @@ section:is(.hero) {
 
 /* MOBILE FIX - REMOVE ALL ABSOLUTE POSITIONING */
 @media (max-width: 980px) {
-  .stack-wrap {
-    display: none !important;
-  }
-
   .deco {
     display: none !important;
   }
