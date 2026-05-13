@@ -1059,10 +1059,11 @@ h1.headline {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100% !important;
+    width: 100vw !important;
     padding: 40px 20px !important;
     margin-top: 20px;
     height: auto !important;
+    margin-left: calc(-50vw + 50%) !important;
   }
   .hero-products-image {
     width: clamp(320px, 90vw, 450px) !important;
@@ -1071,8 +1072,10 @@ h1.headline {
 
 @media (max-width: 480px) {
   .stack-wrap {
+    width: 100vw !important;
     padding: 30px 16px !important;
     margin-top: 16px;
+    margin-left: calc(-50vw + 50%) !important;
   }
   .hero-products-image {
     width: clamp(280px, 90vw, 380px) !important;
@@ -1096,13 +1099,14 @@ h1.headline {
 
   /* Reduce headline and script fonts on mobile */
   .script {
-    font-size: clamp(36px, 6vw, 72px) !important;
-    margin-bottom: 12px !important;
+    font-size: clamp(24px, 4vw, 48px) !important;
+    margin-bottom: 8px !important;
+    line-height: 0.8 !important;
   }
 
   h1.headline {
-    font-size: clamp(24px, 4vw, 42px) !important;
-    margin-bottom: 16px !important;
+    font-size: clamp(18px, 3vw, 32px) !important;
+    margin-bottom: 12px !important;
     max-width: 100% !important;
   }
 
