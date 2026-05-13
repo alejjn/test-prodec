@@ -803,51 +803,15 @@ function Hero() {
             </>
           )}
 
-          {/* Product images stack — 3 SVG images (deck layout) */}
+          {/* Product images — Fala Kids collection */}
           <img
-            src="assets/images/cover-art-monte-palavra.svg"
-            alt="Monte a Palavra"
+            src="assets/images/hero_image.png"
+            alt="Fala Kids Produtos"
+            className="hero-products-image"
             style={{
-              width: 240,
-              height: 350,
-              position: "absolute",
-              left: -20,
-              top: 60,
-              transform: "rotate(-15deg)",
+              maxWidth: "100%",
+              height: "auto",
               objectFit: "contain",
-              zIndex: 1,
-              filter: "drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25))",
-            }}
-          />
-
-          <img
-            src="assets/images/cover-art-fala-kids.svg"
-            alt="Fala Kids"
-            style={{
-              width: 300,
-              height: 430,
-              position: "absolute",
-              left: 270,
-              top: 0,
-              transform: "rotate(0deg)",
-              objectFit: "contain",
-              zIndex: 3,
-              filter: "drop-shadow(0 28px 56px rgba(0, 0, 0, 0.35))",
-            }}
-          />
-
-          <img
-            src="assets/images/cover-art-colorir-textura.svg"
-            alt="Colorir e Textura"
-            style={{
-              width: 240,
-              height: 350,
-              position: "absolute",
-              left: 600,
-              top: 60,
-              transform: "rotate(15deg)",
-              objectFit: "contain",
-              zIndex: 1,
               filter: "drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25))",
             }}
           />
